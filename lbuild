@@ -9,9 +9,8 @@ echo DEMO_CONTAINER is set to $DEMO_CONTAINER "\n"
 
 docker build --build-arg DOCKER_USER=$DOCKER_USER  -t $DEMO_CONTAINER .
 
-=======
 if [ "$1". == "push." ]; then
    docker push $DEMO_CONTAINER
 else
-	echo no push
+   echo no push
 fi
