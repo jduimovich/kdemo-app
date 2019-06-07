@@ -1,2 +1,2 @@
-source ../config/configuration
-docker build -t $DEMO_V1 .
+source ../kdemo-config/configuration
+docker build -t $DEMO_V2 .
