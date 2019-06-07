@@ -1,0 +1,2 @@
+source ../config/configuration
+docker build -t $DEMO_V1 .
