@@ -14,6 +14,7 @@ function addResponse(response, fromRequest) {
 	response.count = count++;
 	response.version = APP_VERSION;
 	response.hostname = HOSTNAME;
+	response.colour = 'red';
 };
 
 app.get("/", function (req, res) {
