@@ -1,6 +1,6 @@
 sh commit-push
 
-sh ../devops-tekton-demo/scripts/run-webhook
+sh ~/dev/kabanero-demo/scripts/run-webhook
 
 
 
