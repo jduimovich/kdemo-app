@@ -5,6 +5,8 @@ echo "This commit added by demo-script at: " $TAG >> README.md
 git add .
 git commit -m "$1 automatic commit for demo"
 
+git remote | xargs | grep ibm
+
 git push ibm master
 git push origin master
 
