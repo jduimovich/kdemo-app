@@ -4,7 +4,7 @@ var path = require('path');
 const { exec } = require('child_process');
 var os = require('os');
 
-var APP_VERSION = '1.0';
+var APP_VERSION = '2.0';
 var HOSTNAME = os.hostname();
 
 var count = 0;
