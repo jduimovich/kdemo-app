@@ -4,7 +4,9 @@ var path = require('path');
 const { exec } = require('child_process');
 var os = require('os');
 
-var APP_VERSION = '2.0';
+var APP_VERSION = '1.0';
+var APP_COLOUR = 'blue';
+
 var HOSTNAME = os.hostname();
 
 var count = 0;
@@ -14,7 +16,7 @@ function addResponse(response, fromRequest) {
 	response.count = count++;
 	response.version = APP_VERSION;
 	response.hostname = HOSTNAME;
-	response.colour = 'red';
+	response.colour = APP_COLOUR;
 };
 
 app.get("/", function (req, res) {
