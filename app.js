@@ -5,7 +5,7 @@ const { exec } = require('child_process');
 var os = require('os');
 
 var APP_VERSION = '1.0';
-var APP_COLOUR = 'blue';
+var APP_COLOUR = 'yellow';
 
 var HOSTNAME = os.hostname();
 
