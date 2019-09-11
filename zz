@@ -1,0 +1,10 @@
+docker run \
+  -v $(pwd):/workspace \
+  -v docker:/kaniko/.docker \
+  --env DOCKER_CONFIG=/kaniko/.docker \
+  gcr.io/kaniko-project/executor:debug \
+  --dockerfile /workspace/Dockerfile \
+  --destination docker-registry.default.svc:5000/kabanero/kdemo-app:latest \
+  --context dir:///workspace/ \
+  --cache=false
+

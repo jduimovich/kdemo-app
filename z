@@ -1,0 +1,8 @@
+export DOCKER_IMAGE=docker-registry.default.svc:5000/kabanero/kdemo-app
+export APP_REPO=$(git-repo-url)
+
+echo $DOCKER_IMAGE
+echo $APP_REPO
+
+sh runmanual
+
