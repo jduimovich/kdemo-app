@@ -1,6 +1,6 @@
 
 export DEFAULT_V1=jduimovich/kdemo-app:190923141911
-export DEFAULT_V2=jduimovich/kdemo-app:190923141911
+export DEFAULT_V2=jduimovich/kdemo-app:190923142115
 
 export DEMO_V1=jduimovich/kdemo-app:190923141911
 export DEMO_V2=PIPELINE_REPLACE:latest       
