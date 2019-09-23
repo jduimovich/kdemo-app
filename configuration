@@ -1,18 +1,36 @@
 
 
-#BLUE V1
+CURRENT_V1=$(sh current-image v1)
+CURRENT_V2=$(sh current-image v2)
+if [ -z $CURRENT_V1 ]
+then
+echo  "Using hardcoded default for 1.0" 
 export DEFAULT_V1=jduimovich/kdemo-app:190923141911
-#GREEN V2
+else 
+export DEFAULT_V1=$CURRENT_V1
+fi
+
+if [ -z $CURRENT_V2 ]
+then
+echo  "Using hardcoded default for 2.0" 
 export DEFAULT_V2=jduimovich/kdemo-app:190923142115
+else 
+export DEFAULT_V2=$CURRENT_V2
+fi
+
+echo DEFAULT_V1 $DEFAULT_V1
+echo DEFAULT_V2 $DEFAULT_V2 
 
 cat app.js | grep APP_VERSION | grep "1.0" >/dev/null
 if [ $? -eq 0 ] ; then
     echo  "Update 1.0" 
     export DEMO_V1=PIPELINE_REPLACE:latest 
-    export DEMO_V2=jduimovich/kdemo-app:190923142115
+    export DEMO_V2=$DEFAULT_V2
 else
     echo  "Update 2.0" 
-    export DEMO_V1=jduimovich/kdemo-app:190923141911
+    export DEMO_V1=$DEFAULT_V1
     export DEMO_V2=PIPELINE_REPLACE:latest    
 fi
    
+echo DEMO_V1 $DEMO_V1
+echo DEMO_V2 $DEMO_V2 

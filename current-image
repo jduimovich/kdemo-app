@@ -1,0 +1,3 @@
+
+kubectl get deployments -o wide -n tekton-pipelines  |grep demoservice-$1 | xargs -n1 echo | grep jduimovich
+
