@@ -1,3 +1,3 @@
 
-export DEMO_V1=jduimovich/kdemo-app:h11-m48-s28 
+export DEMO_V1=jduimovich/kdemo-app:190923140556
 export DEMO_V2=PIPELINE_REPLACE:latest       
