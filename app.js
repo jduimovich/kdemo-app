@@ -17,7 +17,6 @@ function addResponse(response, fromRequest) {
 	response.version = APP_VERSION;
 	response.hostname = HOSTNAME;
 	response.colour = APP_COLOUR;
-	response.chicago = "wow, a change";
 };
 
 app.get("/", function (req, res) {
