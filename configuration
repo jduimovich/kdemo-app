@@ -21,16 +21,18 @@ fi
 echo DEFAULT_V1 $DEFAULT_V1
 echo DEFAULT_V2 $DEFAULT_V2 
 
-cat app.js | grep APP_VERSION | grep "1.0" >/dev/null
-if [ $? -eq 0 ] ; then
-    echo  "Update 1.0" 
+TAG_V1=$(sh current-image v1 | cut -f2 -d ':')
+TAG_V2=$(sh current-image v2 | cut -f2 -d ':')
+
+if [ $TAG_V2 -gt $TAG_V1 ] ; then
+    echo  "Update V1" 
     export DEMO_V1=PIPELINE_REPLACE:latest 
     export DEMO_V2=$DEFAULT_V2
 else
-    echo  "Update 2.0" 
+    echo  "Update V2" 
     export DEMO_V1=$DEFAULT_V1
     export DEMO_V2=PIPELINE_REPLACE:latest    
 fi
-   
+
 echo DEMO_V1 $DEMO_V1
 echo DEMO_V2 $DEMO_V2 
