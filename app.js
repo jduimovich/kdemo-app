@@ -4,8 +4,8 @@ var path = require('path');
 const { exec } = require('child_process');
 var os = require('os');
 
-var APP_VERSION = '4.0';
-var APP_COLOUR = 'orange';
+var APP_VERSION = '5.0';
+var APP_COLOUR = 'red';
 var HOSTNAME = os.hostname();
 
 var SIM= process.env.SIM;
