@@ -4,7 +4,7 @@ CURRENT_V2=$(sh current-image v2)
 if [ -z $CURRENT_V1 ]
 then
 echo  "Using hardcoded default for 1.0" 
-export DEFAULT_V1=jduimovich/kdemo-app:200126134217
+export DEFAULT_V1=jduimovich/kdemo-app:200127161010
 else 
 export DEFAULT_V1=$CURRENT_V1
 fi
@@ -12,7 +12,7 @@ fi
 if [ -z $CURRENT_V2 ]
 then
 echo  "Using hardcoded default for 2.0" 
-export DEFAULT_V2=jduimovich/kdemo-app:200126134334
+export DEFAULT_V2=jduimovich/kdemo-app:200126205911
 else 
 export DEFAULT_V2=$CURRENT_V2
 fi
