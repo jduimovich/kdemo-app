@@ -7,7 +7,7 @@ var os = require('os');
 var APP_VERSION = '1.0';
 var APP_COLOUR = 'blue';
 var HOSTNAME = os.hostname();
-
+ 
 var SIM= process.env.SIM;
 if (SIM) console.log ("Running Simulated Data");
 var sim = { 
