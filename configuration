@@ -12,7 +12,7 @@ fi
 if [ -z $CURRENT_V2 ]
 then
 echo  "Using hardcoded default for 2.0" 
-export DEFAULT_V2=jduimovich/kdemo-app:200126205911
+export DEFAULT_V2=jduimovich/kdemo-app:200204120115
 else 
 export DEFAULT_V2=$CURRENT_V2
 fi
