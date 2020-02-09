@@ -63,6 +63,7 @@ app.get("/test", function (req, res) {
 	var response = new Object();
 	addResponse(response, req)
 	res.setHeader('Content-Type', 'application/json');
+	res.setHeader('Access-Control-Allow-Origin', '*'); 
 	res.send(JSON.stringify(response, undefined, 4));
 });
 
