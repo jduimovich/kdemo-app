@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: demoservice
-        image: PIPELINE_REPLACE:latest
+        image: jduimovich/kdemo-app:200208224343
         resources:
           limits:
             cpu: "200m"
@@ -54,7 +54,7 @@ spec:
     spec:
       containers:
       - name: demoservice
-        image: jduimovich/kdemo-app:200204120115
+        image: PIPELINE_REPLACE:latest
         resources:
           limits:
             cpu: "200m"
