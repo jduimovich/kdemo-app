@@ -16,15 +16,16 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: demoservice-v1
+  status: unknown
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        status: candidate
         group: istiodemo
         app: demoservice
         version: v1
+        status: candidate
     spec:
       containers:
       - name: demoservice
@@ -44,19 +45,20 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: demoservice-v2
+  status: unknown
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        status: original
         group: istiodemo
         app: demoservice
         version: v2
+        status: original
     spec:
       containers:
       - name: demoservice
-        image: jduimovich/kdemo-app:200211143018
+        image: jduimovich/kdemo-app:200208225602
         resources:
           limits:
             cpu: "200m"
