@@ -4,8 +4,8 @@ var path = require('path');
 const { exec } = require('child_process');
 var os = require('os');
 
-var APP_VERSION = '1.1';
-var APP_COLOUR = 'red';
+var APP_VERSION = '1.2';
+var APP_COLOUR = 'green';
 var HOSTNAME = os.hostname();
  
 var SIM= process.env.SIM;
@@ -50,14 +50,6 @@ app.get("/", function (req, res) {
 	res.send("Formated headers:	<br> <pre> " + response + "</pre>");
 });
 
-app.get("/headers", function (req, res) {
-	console.log(req.url); 
-	// return the headers with some extra fields, response is base JSON
-	var response = req.headers;
-	addResponse(response, req)
-	res.setHeader('Content-Type', 'application/json');
-	res.send(JSON.stringify(response, undefined, 4));
-});
 
 app.get("/test", function (req, res) { 
 	var response = new Object();
@@ -67,14 +59,6 @@ app.get("/test", function (req, res) {
 	res.send(JSON.stringify(response, undefined, 4));
 });
 
-app.get("/terminate-v1", function (req, res) { 
-	var response = new Object();
-	addResponse(response, req)
-	response.terminated = "TRUE"; 
-	res.setHeader('Content-Type', 'application/json');
-	res.send(JSON.stringify(response, undefined, 4));
-	process.exit (0);
-});
  
 if (SIM) { 
 app.get("/simconfig", function (req, res) { 
