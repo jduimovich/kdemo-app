@@ -21,13 +21,14 @@ spec:
   template:
     metadata:
       labels:
+        status: original
         group: istiodemo
         app: demoservice
         version: v1
     spec:
       containers:
       - name: demoservice
-        image: DEMO_V1
+        image: jduimovich/kdemo-app:200210214515
         resources:
           limits:
             cpu: "200m"
@@ -48,13 +49,14 @@ spec:
   template:
     metadata:
       labels:
+        status: candidate
         group: istiodemo
         app: demoservice
         version: v2
     spec:
       containers:
       - name: demoservice
-        image: DEMO_V2
+        image: PIPELINE_REPLACE:latest
         resources:
           limits:
             cpu: "200m"
@@ -62,7 +64,8 @@ spec:
           requests:
             cpu: "100m"
             memory: "64Mi"
-        imagePullPolicy:  Always
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
 ---
+

@@ -1,20 +1,14 @@
 
 source configuration
 
-t1=$(mktemp) 
-t2=$(mktemp)  
+yq w -d1 -i deploy-template  spec.template.metadata.labels.status $LABEL_V1
+yq w -d1 -i deploy-template  spec.template.spec.containers[0].image $DEMO_V1
 
-cp deploy-template $t1
-sed s/DEMO_V1/${DEMO_V1////\\/}/ $t1 > $t2
-cp $t2 $t1
-sed s/DEMO_V2/${DEMO_V2////\\/}/ $t1 > $t2
-cp $t2 $t1
-sed s/LEFT/50/ $t1 > $t2
-cp $t2 $t1
-sed s/RIGHT/50/ $t1 > $t2 
-cp $t2 config/deploy.yaml
-rm $t1
-rm $t2
+yq w -d2 -i deploy-template  spec.template.metadata.labels.status $LABEL_V2
+yq w -d2 -i deploy-template  spec.template.spec.containers[0].image $DEMO_V2
+ 
+cp deploy-template  config/deploy.yaml
+
 
 
 

@@ -27,10 +27,14 @@ if [ $TAG_V2 -gt $TAG_V1 ] ; then
     echo  "Update V1" 
     export DEMO_V1=PIPELINE_REPLACE:latest 
     export DEMO_V2=$DEFAULT_V2
+    export LABEL_V1=candidate
+    export LABEL_V2=original
 else
     echo  "Update V2" 
     export DEMO_V1=$DEFAULT_V1
     export DEMO_V2=PIPELINE_REPLACE:latest    
+    export LABEL_V1=original
+    export LABEL_V2=candidate
 fi
 
 echo DEMO_V1 $DEMO_V1
