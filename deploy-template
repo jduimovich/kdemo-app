@@ -21,14 +21,14 @@ spec:
   template:
     metadata:
       labels:
-        status: original
+        status: candidate
         group: istiodemo
         app: demoservice
         version: v1
     spec:
       containers:
       - name: demoservice
-        image: jduimovich/kdemo-app:200210214515
+        image: PIPELINE_REPLACE:latest
         resources:
           limits:
             cpu: "200m"
@@ -49,14 +49,14 @@ spec:
   template:
     metadata:
       labels:
-        status: candidate
+        status: original
         group: istiodemo
         app: demoservice
         version: v2
     spec:
       containers:
       - name: demoservice
-        image: PIPELINE_REPLACE:latest
+        image: jduimovich/kdemo-app:200211092837
         resources:
           limits:
             cpu: "200m"
