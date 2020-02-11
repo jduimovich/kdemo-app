@@ -16,7 +16,6 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: demoservice-v1
-  status: unknown
 spec:
   replicas: 1
   template:
@@ -45,7 +44,6 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: demoservice-v2
-  status: unknown
 spec:
   replicas: 1
   template:

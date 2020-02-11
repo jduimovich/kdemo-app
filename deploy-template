@@ -16,7 +16,6 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: demoservice-v1
-  status: unknown
 spec:
   replicas: 1
   template:
@@ -29,7 +28,7 @@ spec:
     spec:
       containers:
       - name: demoservice
-        image: PIPELINE_REPLACE:latest
+        image: jduimovich/kdemo-app:200208225457
         resources:
           limits:
             cpu: "200m"
@@ -45,7 +44,6 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: demoservice-v2
-  status: unknown
 spec:
   replicas: 1
   template:

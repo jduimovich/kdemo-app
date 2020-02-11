@@ -1,13 +1,13 @@
 
 source configuration
 
-yq w -d1 -i deploy-template  spec.template.metadata.labels.status $LABEL_V1
 yq w -d1 -i deploy-template  spec.template.spec.containers[0].image $DEMO_V1
-
-yq w -d2 -i deploy-template  spec.template.metadata.labels.status $LABEL_V2
 yq w -d2 -i deploy-template  spec.template.spec.containers[0].image $DEMO_V2
- 
 cp deploy-template  config/deploy.yaml
+
+yq w -d1 -i deploy-template  spec.template.spec.containers[0].image $DEFAULT_V1
+yq w -d2 -i deploy-template  spec.template.spec.containers[0].image $DEFAULT_V2
+cp deploy-template  deploy/deploy.yaml
 
 
 
