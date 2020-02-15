@@ -62,9 +62,8 @@ spec:
           requests:
             cpu: "100m"
             memory: "64Mi"
-        imagePullPolicy:  Always
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
 ---
-
 

@@ -24,7 +24,6 @@ spec:
         group: istiodemo
         app: demoservice
         version: v1
-        status: candidate
     spec:
       containers:
       - name: demoservice
@@ -52,11 +51,10 @@ spec:
         group: istiodemo
         app: demoservice
         version: v2
-        status: original
     spec:
       containers:
       - name: demoservice
-        image: jduimovich/kdemo-app:200211200017
+        image: jduimovich/kdemo-app:200208225602
         resources:
           limits:
             cpu: "200m"
