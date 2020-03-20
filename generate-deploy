@@ -1,13 +1,14 @@
 
 source configuration
 
-yq w -d1 -i deploy-template  spec.template.spec.containers[0].image $DEMO_V1
-yq w -d2 -i deploy-template  spec.template.spec.containers[0].image $DEMO_V2
-cp deploy-template  config/demoservice.yaml
+yq w -i config/demo-v1-deploy.yaml  spec.template.spec.containers[0].image $DEMO_V1
+yq w -i config/demo-v2-deploy.yaml   spec.template.spec.containers[0].image $DEMO_V2
 
-yq w -d1 -i deploy-template  spec.template.spec.containers[0].image $DEFAULT_V1
-yq w -d2 -i deploy-template  spec.template.spec.containers[0].image $DEFAULT_V2
-cp deploy-template  deploy/demoservice.yaml
+cp  config/demo-v*-deploy.yaml deploy
+
+yq w -i deploy/demo-v1-deploy.yaml spec.template.spec.containers[0].image $DEFAULT_V1
+yq w -i deploy/demo-v2-deploy.yaml spec.template.spec.containers[0].image $DEFAULT_V2
+
 
 
 

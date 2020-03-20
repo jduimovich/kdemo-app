@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demoservice-v2
+  labels:
+    app: demoservice
+    version: v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demoservice
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: demoservice
+        version: v2
+    spec:
+      containers:
+      - name: demoservice
+        image: jduimovich/kdemo-app:200208225602
+        resources:
+          limits:
+            cpu: "200m"
+            memory: "64Mi"
+          requests:
+            cpu: "100m"
+            memory: "64Mi"
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+---
+
