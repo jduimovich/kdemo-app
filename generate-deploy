@@ -4,7 +4,7 @@ source configuration
 yq w -i config/demo-v1-deploy.yaml  spec.template.spec.containers[0].image $DEMO_V1
 yq w -i config/demo-v2-deploy.yaml   spec.template.spec.containers[0].image $DEMO_V2
 
-cp  config/demo-v*-deploy.yaml deploy
+cp  config/demo-*-deploy.yaml deploy
 
 yq w -i deploy/demo-v1-deploy.yaml spec.template.spec.containers[0].image $DEFAULT_V1
 yq w -i deploy/demo-v2-deploy.yaml spec.template.spec.containers[0].image $DEFAULT_V2
